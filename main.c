@@ -14,16 +14,22 @@
 
 static void init(int argc, char *argv[], char *envp[])
 {
-
+	
 }
 
 int main(int argc, char *argv[], char *envp[])
 {
+	char	*line;
+
 	init(argc, argv, envp);
 	(void)envp;
 	while(1)
 	{
-			
+		line = readline("minishell:$ ");
+		if (line)
+		{
+
+		}
 	}
 	return (0);
 }
