@@ -12,13 +12,6 @@
 
 #include "minishell.h"
 
-static void init(int argc, char *argv[], char *envp[])
-{
-	(void)argc;
-	(void)argv;
-	(void)envp;
-}
-
 int main(int argc, char *argv[], char *envp[])
 {
 	char	*line;
@@ -27,10 +20,7 @@ int main(int argc, char *argv[], char *envp[])
 	while(1)
 	{
 		line = readline("minishell:$ ");
-		if (line)
-		{
-
-		}
+		tokenize(&(get_info()->list), line);
 	}
 	return (0);
 }

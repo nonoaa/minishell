@@ -16,8 +16,13 @@ NAME = minishell
 MAKE = make
 LIB_NAME = libft.a
 LIB_DIR = ./libft
-SRC_DIR = ./
-SRCS = $(SRC_DIR)/main.c
+SRC_DIR = .
+SRCS = $(SRC_DIR)/main.c \
+		$(SRC_DIR)/tokenize.c \
+		$(SRC_DIR)/utils.c \
+		$(SRC_DIR)/init.c \
+		$(SRC_DIR)/list.c \
+		$(SRC_DIR)/utils_print.c
 
 OBJS = $(SRCS:.c=.o)
 
