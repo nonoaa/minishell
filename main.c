@@ -20,7 +20,11 @@ int main(int argc, char *argv[], char *envp[])
 	while(1)
 	{
 		line = readline("minishell:$ ");
-		tokenize(&(get_info()->list), line);
+		if (line)
+		{
+			if (line[0] == '\0' || chk_input(line) == TRUE)
+				continue ;
+		}
 	}
 	return (0);
 }

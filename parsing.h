@@ -3,6 +3,9 @@
 
 # include <errno.h>
 
+# define TRUE 1
+# define FALSE 0
+
 typedef enum e_std
 {
 	STDIN = 0,
@@ -44,6 +47,7 @@ typedef struct s_tok_list
 typedef struct s_info
 {
 	t_tok_list		*list;
+	int				exitcode;
 }	t_info;
 
 t_info	*get_info(void);
@@ -53,5 +57,8 @@ void	print_strerr(int err);
 t_tok_list	*create_list(void);
 void	init(int argc, char **argv, char **envp);
 void	add_token(t_tok_list **list, t_tok *new_tok);
+int	chk_input(char *line);
+void	print_err(char *line);
+void	ft_clear(void);
 
 #endif
