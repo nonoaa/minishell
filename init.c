@@ -10,4 +10,5 @@ void	init(int argc, char **argv, char **envp)
 	info = get_info();
 	ft_bzero(info, sizeof(t_info));
 	info->list = create_list();
+	info->tree = create_tree();
 }
