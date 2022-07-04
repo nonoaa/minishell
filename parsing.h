@@ -44,9 +44,23 @@ typedef struct s_tok_list
 	int		count;
 }	t_tok_list;
 
+typedef struct s_node
+{
+	t_data			data;
+	t_type			type;
+	struct s_node	*left;
+	struct s_node	*right;
+}	t_node;
+
+typedef struct s_astree
+{
+	t_node	*root;
+}	t_astree;
+
 typedef struct s_info
 {
 	t_tok_list		*list;
+	t_astree		*tree;
 	int				exitcode;
 }	t_info;
 
@@ -58,7 +72,7 @@ t_tok_list	*create_list(void);
 void	init(int argc, char **argv, char **envp);
 void	add_token(t_tok_list **list, t_tok *new_tok);
 int	chk_input(char *line);
-void	print_err(char *line);
+void	print_syntax_err(char *line);
 void	ft_clear(void);
 
 #endif

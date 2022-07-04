@@ -6,7 +6,7 @@ void	print_strerr(int err)
 	exit(EXIT_FAILURE);
 }
 
-void	print_err(char *line)
+void	print_syntax_err(char *line)
 {
 	ft_clear();
 	free(line);
