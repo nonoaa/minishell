@@ -1,8 +1,8 @@
 #include "minishell.h"
 
 /*
-**	<PIPELINE> := <PIPELINE> '|' <PIPELINE>
-**				| <CMD>
+**	<PIPELINE> := <CMD>
+**				| <CMD> '|' <PIPELINE>
 **	
 **	<CMD> := <SIMPLE_CMD>
 **			| <SIMPLE_CMD> <REDIRS>
@@ -33,7 +33,7 @@ void	pipeline(int *idx)
 	t_info	*info;
 
 	info = get_info();
-	cmd(idx);
+	// cmd(idx);
 	token = get_token(info->list, *idx);
 	if (token && token->type == PIPE && ++(*idx))
 	{

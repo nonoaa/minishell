@@ -74,5 +74,9 @@ void	add_token(t_tok_list **list, t_tok *new_tok);
 int	chk_input(char *line);
 void	print_syntax_err(char *line);
 void	ft_clear(void);
+void	pipeline(int *idx);
+t_astree	*create_tree(void);
+t_node	*create_node(t_tok	*token);
+t_tok	*get_token(t_tok_list *list, int pos);
 
 #endif
