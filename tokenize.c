@@ -45,7 +45,7 @@ void	tokenize(t_tok_list **list, char *str)
 		{
 			if (ft_strchr("\'\"", *end))
 				end = ft_strchr(end + 1, *end);
-			if (!*end || ft_strchr(" |<>", *(end + 1)))
+			if (ft_strchr(" |<>", *(end + 1)))
 				break ;
 			end++;
 		}
@@ -53,8 +53,9 @@ void	tokenize(t_tok_list **list, char *str)
 			end++;
 		if (*str)
 		{
-			int len = end - str + 1;
-			init_token(list, ft_substr(str, 0, len), len);
+			init_token(list, ft_substr(str, 0, end - str + 1), end - str + 1);
+			if (!*end)
+				break ;
 			str = end + 1;
 		}
 	}
