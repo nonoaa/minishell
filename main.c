@@ -29,6 +29,8 @@ int main(int argc, char *argv[], char *envp[])
 			free(line);
 			line = NULL;
 		}
+		else
+			ctrl_d();
 	}
 	return (0);
 }

@@ -79,6 +79,7 @@ void	pipeline(int *idx);
 t_astree	*create_tree(void);
 t_node	*create_node(t_tok	*token);
 t_tok	*get_token(t_tok_list *list, int pos);
+void	ctrl_d(void);
 
 void	pipeline(int *idx);
 void	cmd(int *idx);
