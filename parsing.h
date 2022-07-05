@@ -62,6 +62,7 @@ typedef struct s_info
 	t_tok_list		*list;
 	t_astree		*tree;
 	int				exitcode;
+	int				h_count;
 }	t_info;
 
 t_info	*get_info(void);
@@ -78,5 +79,22 @@ void	pipeline(int *idx);
 t_astree	*create_tree(void);
 t_node	*create_node(t_tok	*token);
 t_tok	*get_token(t_tok_list *list, int pos);
+
+void	pipeline(int *idx);
+void	cmd(int *idx);
+void	simple_cmd(int *idx);
+void	redirs(int *idx);
+void	redir(int *idx);
+void	args(int *idx);
+void	path(int *idx);
+void	filename(int *idx);
+
+void	insert_pipe_heredoc(t_astree *tree, t_node *node);
+void	insert_redir(t_astree *tree, t_node *node);
+void	insert_path(t_astree *tree, t_node *node);
+void	insert_filename(t_astree *tree, t_node *node);
+void	insert_heredoc_redir(void);
+
+
 
 #endif

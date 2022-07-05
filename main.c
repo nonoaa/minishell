@@ -24,6 +24,10 @@ int main(int argc, char *argv[], char *envp[])
 		{
 			if (line[0] == '\0' || chk_input(line) == TRUE)
 				continue ;
+
+			ft_clear();
+			free(line);
+			line = NULL;
 		}
 	}
 	return (0);
