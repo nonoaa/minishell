@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "../minishell.h"
 
 void	insert_pipe_heredoc(t_astree *tree, t_node *node)
 {
