@@ -3,10 +3,10 @@ CC = gcc
 # CFLAGS = -fsanitize=thread -g
 # CFLAGS = -g
 CFLAGS = -Wall -Wextra -Werror
-# LDFLAGS = -lncurses -lreadline -L/Users/byeongguk/.brew/opt/readline/lib
-# CPPFLAGS = -I/Users/byeongguk/.brew/opt/readline/include
-LDFLAGS = -lncurses -lreadline -L/usr/local/opt/readline/lib
-CPPFLAGS = -I/usr/local/opt/readline/include
+LDFLAGS = -lncurses -lreadline -L/Users/byahn/.brew/opt/readline/lib
+CPPFLAGS = -I/Users/byahn/.brew/opt/readline/include
+# LDFLAGS = -lncurses -lreadline -L/usr/local/opt/readline/lib
+# CPPFLAGS = -I/usr/local/opt/readline/include
 
 # LDFLAGS = -lncurses -lreadline -L/Users/junylee/.brew/opt/readline/lib
 # CPPFLAGS = -I/Users/junylee/.brew/opt/readline/include
@@ -24,7 +24,13 @@ SRCS = $(SRC_DIR)/main.c \
 		$(SRC_DIR)/list.c \
 		$(SRC_DIR)/utils_print.c \
 		$(SRC_DIR)/chk_input.c \
-		$(SRC_DIR)/utils_clear.c
+		$(SRC_DIR)/utils_clear.c \
+		$(SRC_DIR)/syntax.c \
+		$(SRC_DIR)/syntax2.c \
+		$(SRC_DIR)/tree.c \
+		$(SRC_DIR)/insert.c
+
+
 
 OBJS = $(SRCS:.c=.o)
 
