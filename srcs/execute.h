@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   execute.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byahn <byahn@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: junylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 16:58:42 by byahn             #+#    #+#             */
-/*   Updated: 2022/06/21 17:16:38 by byahn            ###   ########.fr       */
+/*   Created: 2022/07/06 17:02:03 by junylee           #+#    #+#             */
+/*   Updated: 2022/07/06 17:02:04 by junylee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef EXECUTE_H
+# define EXECUTE_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <readline/readline.h>
-# include <readline/history.h>
-# include "../libft/libft.h"
-
-# include "parsing.h"
-# include "builtin.h"
-# include "execute.h"
+# include "minishell.h"
 
 /*
 ** =============================================================================
-** utils.c
+** execute.c
 ** =============================================================================
 */
 
-int	ft_strcmp(char *s1, char *s2);
+void execute_tree(t_node *node);
+
+/*
+** =============================================================================
+** redir.c
+** =============================================================================
+*/
+
+int	connect_redir(void);
+int	disconnect_redir(void);
 
 #endif

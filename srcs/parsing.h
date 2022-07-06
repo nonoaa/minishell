@@ -2,6 +2,7 @@
 # define PARSING_H
 
 # include <errno.h>
+# include "minishell.h"
 
 # define TRUE 1
 # define FALSE 0
@@ -31,6 +32,14 @@ typedef enum e_type
 
 typedef char	*t_data;
 
+typedef struct s_file
+{
+	int	open_stdin;
+	int	open_stdout;
+	int	origin_stdin;
+	int	origin_stdout;
+}	t_file;
+
 typedef struct s_tok
 {
 	t_data			data;
@@ -57,10 +66,18 @@ typedef struct s_astree
 	t_node	*root;
 }	t_astree;
 
+typedef struct s_enode
+{
+	char	*key;
+	char	*value;
+}	t_enode;
+
 typedef struct s_info
 {
 	t_tok_list		*list;
 	t_astree		*tree;
+	t_file			*file;
+	t_list			*env_list;
 	int				exitcode;
 	int				h_count;
 }	t_info;
@@ -96,6 +113,7 @@ void	insert_path(t_astree *tree, t_node *node);
 void	insert_filename(t_astree *tree, t_node *node);
 void	insert_heredoc_redir(void);
 
-
+t_enode *create_enode(char *str);
+void env_list(char **envp);
 
 #endif
