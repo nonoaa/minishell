@@ -23,7 +23,6 @@ SRC_EXCUTE = execute/
 SOURCES = main.c \
 		utils.c \
 		$(SRC_PARSE)tokenize.c \
-		$(SRC_PARSE)utils.c \
 		$(SRC_PARSE)init.c \
 		$(SRC_PARSE)list.c \
 		$(SRC_PARSE)utils_print.c \
