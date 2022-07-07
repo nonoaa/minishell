@@ -91,7 +91,6 @@ void	replace_recur(t_node *node)
 		org_data = node->data;
 		node->data = ft_strdup("");
 		replace_token(&(node->data), org_data);
-		printf ("%s\n", node->data);
 		free(org_data);
 		org_data = 0;
 	}

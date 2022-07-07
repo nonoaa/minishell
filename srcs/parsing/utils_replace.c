@@ -1,21 +1,5 @@
 #include "../minishell.h"
 
-char	*get_env(char *name)
-{
-	t_list	*cur;
-	t_info	*info;
-
-	info = get_info();
-	cur = info->env_list;
-	while (cur)
-	{
-		if (!ft_strcmp(((t_enode *)cur->content)->key, name))
-			return (((t_enode *)cur->content)->value);
-		cur = cur->next;
-	}
-	return ("");
-}
-
 void	join_str(char **new_data, char *org_data, int *start, int end)
 {
 	char	*origin;

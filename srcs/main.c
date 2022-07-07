@@ -24,6 +24,7 @@ int main(int argc, char *argv[], char *envp[])
 		{
 			if (line[0] == '\0' || chk_input(line) == TRUE)
 				continue ;
+			replace_recur(get_info()->tree->root);
 			execute_tree(get_info()->tree->root);
 			ft_clear();
 			free(line);

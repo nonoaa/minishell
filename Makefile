@@ -34,6 +34,9 @@ SOURCES = main.c \
 		$(SRC_PARSE)tree.c \
 		$(SRC_PARSE)insert.c \
 		$(SRC_PARSE)env_list.c \
+		$(SRC_PARSE)replace_env.c \
+		$(SRC_PARSE)utils_replace.c \
+		$(SRC_PARSE)utils_replace2.c \
 		$(SRC_EXCUTE)excute.c \
 		$(SRC_EXCUTE)redir.c \
 		$(SRC_BULITIN)cd.c \
