@@ -23,3 +23,19 @@ void	ctrl_d(void)
 	// set_org_term();
 	exit(get_info()->exitcode);
 }
+
+char	*get_env(char *key)
+{
+	t_list	*cur;
+	t_info	*info;
+
+	info = get_info();
+	cur = info->env_list;
+	while (cur)
+	{
+		if (!ft_strcmp(((t_enode *)cur->content)->key , key))
+			return (((t_enode *)cur->content)->value);
+		cur = cur->next;
+	}
+	return ("");
+}

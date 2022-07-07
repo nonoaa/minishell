@@ -19,8 +19,8 @@ static void exe_command(t_node *node)
 		builtin_echo(node);
 	else if (!ft_strcmp(node->data, "cd"))
 		builtin_cd(node);
-	// else if (!ft_strcmp(node->data, "pwd"))
-	// 	builtin_pwd(node);
+	else if (!ft_strcmp(node->data, "pwd"))
+		builtin_pwd(node);
 	// else if (!ft_strcmp(node->data, "export"))
 	// 	builtin_export(node);
 	// else if (!ft_strcmp(node->data, "unset"))

@@ -82,8 +82,6 @@ typedef struct s_info
 	int				h_count;
 }	t_info;
 
-t_info	*get_info(void);
-int	ft_isblank(char c);
 void	tokenize(t_tok_list **list, char *str);
 void	print_strerr(int err);
 t_tok_list	*create_list(void);
@@ -96,7 +94,6 @@ void	pipeline(int *idx);
 t_astree	*create_tree(void);
 t_node	*create_node(t_tok	*token);
 t_tok	*get_token(t_tok_list *list, int pos);
-void	ctrl_d(void);
 
 void	pipeline(int *idx);
 void	cmd(int *idx);
@@ -112,8 +109,17 @@ void	insert_redir(t_astree *tree, t_node *node);
 void	insert_path(t_astree *tree, t_node *node);
 void	insert_filename(t_astree *tree, t_node *node);
 void	insert_heredoc_redir(void);
-
 t_enode *create_enode(char *str);
 void env_list(char **envp);
+
+/*
+** =============================================================================
+** utils.c
+** =============================================================================
+*/
+t_info	*get_info(void);
+int	ft_isblank(char c);
+void	ctrl_d(void);
+char	*get_env(char *key);
 
 #endif
