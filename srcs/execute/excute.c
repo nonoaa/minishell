@@ -15,12 +15,12 @@
 static void exe_command(t_node *node)
 {
 	// connect_redir();
-    if (!ft_strcmp(node->data, "echo"))
+	if (!ft_strcmp(node->data, "echo"))
 		builtin_echo(node);
 	else if (!ft_strcmp(node->data, "cd"))
 		builtin_cd(node);
-	// else if (!ft_strcmp(node->data, "pwd"))
-	// 	builtin_pwd(node);
+	else if (!ft_strcmp(node->data, "pwd"))
+		builtin_pwd(node);
 	// else if (!ft_strcmp(node->data, "export"))
 	// 	builtin_export(node);
 	// else if (!ft_strcmp(node->data, "unset"))
@@ -34,17 +34,17 @@ static void exe_command(t_node *node)
 
 static void execute_node(t_node *node)
 {
-    if (!node)
+	if (!node)
 		return ;
-    if (node->type == TOKEN)
-        exe_command(node);
+	if (node->type == TOKEN)
+		exe_command(node);
 }
 
 void execute_tree(t_node *node)
 {
-    t_info	*info;
+	t_info	*info;
 
-    if (!node)
+	if (!node)
 		return ;
 	info = get_info();
 	info->file->origin_stdin = dup(STDIN);
