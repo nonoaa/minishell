@@ -42,4 +42,5 @@ void	init(int argc, char **argv, char **envp)
 		print_strerr(errno);
 	ft_bzero(info->file, sizeof(t_file));
 	set_env_list(envp);
+	get_org_term();
 }
