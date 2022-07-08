@@ -26,7 +26,7 @@ t_enode	*create_enode(char *str)
 	return (new);
 }
 
-void	env_list(char **envp)
+void	set_env_list(char **envp)
 {
 	t_info	*info;
 	int		i;

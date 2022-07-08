@@ -110,17 +110,7 @@ void	insert_path(t_astree *tree, t_node *node);
 void	insert_filename(t_astree *tree, t_node *node);
 void	insert_heredoc_redir(void);
 t_enode *create_enode(char *str);
-void env_list(char **envp);
-
-/*
-** =============================================================================
-** utils.c
-** =============================================================================
-*/
-t_info	*get_info(void);
-int	ft_isblank(char c);
-void	ctrl_d(void);
-char	*get_env(char *key);
+void	set_env_list(char **envp);
 
 void	replace_recur(t_node *node);
 

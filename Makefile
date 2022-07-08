@@ -20,8 +20,11 @@ FOLDER = ./srcs/
 SRC_PARSE = parsing/
 SRC_BULITIN = builtin/
 SRC_EXCUTE = execute/
+SRC_UTILS = utils/
 SOURCES = main.c \
-		utils.c \
+		$(SRC_UTILS)utils.c \
+		$(SRC_UTILS)env_utils.c \
+		$(SRC_UTILS)free_utils.c \
 		$(SRC_PARSE)tokenize.c \
 		$(SRC_PARSE)init.c \
 		$(SRC_PARSE)list.c \
