@@ -22,7 +22,7 @@
 # include "parsing.h"
 # include "builtin.h"
 # include "execute.h"
-
+# include "util.h"
 /*
 ** =============================================================================
 ** utils.c

@@ -27,5 +27,5 @@ void	init(int argc, char **argv, char **envp)
 	if (!(info->file))
 		print_strerr(errno);
 	ft_bzero(info->file, sizeof(t_file));
-	env_list(envp);
+	set_env_list(envp);
 }

@@ -21,14 +21,16 @@ static void exe_command(t_node *node)
 		builtin_cd(node);
 	else if (!ft_strcmp(node->data, "pwd"))
 		builtin_pwd(node);
-	// else if (!ft_strcmp(node->data, "export"))
-	// 	builtin_export(node);
+	else if (!ft_strcmp(node->data, "export"))
+		builtin_export(node);
 	// else if (!ft_strcmp(node->data, "unset"))
 	// 	builtin_unset(node);
 	// else if (!ft_strcmp(node->data, "env"))
 	// 	builtin_env(node);
 	// else if (!ft_strcmp(node->data, "exit"))
 	// 	builtin_exit(node);
+	// else
+	// 	exec(node, 0);
 	// disconnect_redir();
 }
 

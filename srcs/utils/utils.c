@@ -6,11 +6,11 @@
 /*   By: junylee <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:12:09 by junylee           #+#    #+#             */
-/*   Updated: 2022/07/06 17:12:28 by junylee          ###   ########.fr       */
+/*   Updated: 2022/07/07 20:28:24 by junylee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {
