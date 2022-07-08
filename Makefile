@@ -23,23 +23,23 @@ SRC_EXCUTE = execute/
 SRC_UTILS = utils/
 SOURCES = main.c \
 		$(SRC_UTILS)utils.c \
-		$(SRC_UTILS)env_utils.c \
-		$(SRC_UTILS)free_utils.c \
+		$(SRC_UTILS)utils_env.c \
+		$(SRC_UTILS)utils_free.c \
+		$(SRC_UTILS)utils_replace.c \
+		$(SRC_UTILS)utils_replace2.c \
+		$(SRC_UTILS)utils_termios.c \
+		$(SRC_UTILS)utils_print.c \
+		$(SRC_UTILS)utils_clear.c \
 		$(SRC_PARSE)tokenize.c \
 		$(SRC_PARSE)init.c \
 		$(SRC_PARSE)list.c \
-		$(SRC_PARSE)utils_print.c \
 		$(SRC_PARSE)chk_input.c \
-		$(SRC_PARSE)utils_clear.c \
 		$(SRC_PARSE)syntax.c \
 		$(SRC_PARSE)syntax2.c \
 		$(SRC_PARSE)tree.c \
 		$(SRC_PARSE)insert.c \
 		$(SRC_PARSE)env_list.c \
 		$(SRC_PARSE)replace_env.c \
-		$(SRC_PARSE)utils_replace.c \
-		$(SRC_PARSE)utils_replace2.c \
-		$(SRC_PARSE)utils_termios.c \
 		$(SRC_EXCUTE)excute.c \
 		$(SRC_EXCUTE)redir.c \
 		$(SRC_BULITIN)cd.c \
