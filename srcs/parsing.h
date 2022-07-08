@@ -2,6 +2,8 @@
 # define PARSING_H
 
 # include <errno.h>
+# include <sys/ioctl.h>
+# include <termios.h>
 # include "minishell.h"
 
 # define TRUE 1
@@ -80,6 +82,9 @@ typedef struct s_info
 	t_list			*env_list;
 	int				exitcode;
 	int				h_count;
+	int				is_hdoc;
+	struct termios	org_term;
+	struct termios	new_term;
 }	t_info;
 
 void	tokenize(t_tok_list **list, char *str);
@@ -116,10 +121,20 @@ void	replace_recur(t_node *node);
 
 void	join_str(char **new_data, char *org_data, int *start, int end);
 void	join_envp(char **new_data, char *env, int *start, int *end);
-void	find_end_pos(char *data, int *end, int *is_replace);
+void	find_end_pos(char *data, int *end);
 char	*get_env_or_status(char *env);
 
 void	init_variable(int *dquote, int *front, int *end);
 void	join_squote(char **res, char *data, int *front, int *end);
+
+/*
+** =============================================================================
+** utils_termios.c
+** =============================================================================
+*/
+void		get_org_term(void);
+void		set_org_term(void);
+void		echoctl_off(void);
+void		echoctl_on(void);
 
 #endif

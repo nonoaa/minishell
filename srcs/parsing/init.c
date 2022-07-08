@@ -12,6 +12,18 @@
 
 #include "../minishell.h"
 
+void	handler(int signo)
+{
+	if (signo == SIGINT)
+	{
+		get_info()->exitcode = 1;
+		get_info()->is_hdoc = FALSE;
+		ioctl(STDIN_FILENO, TIOCSTI, "\n");
+		rl_replace_line("", 0);
+		rl_on_new_line();
+	}
+}
+
 void	init(int argc, char **argv, char **envp)
 {
 	t_info	*info;
@@ -21,6 +33,8 @@ void	init(int argc, char **argv, char **envp)
 	(void)envp;
 	info = get_info();
 	ft_bzero(info, sizeof(t_info));
+	signal(SIGINT, handler);
+	signal(SIGQUIT, SIG_IGN);
 	info->list = create_list();
 	info->tree = create_tree();
 	info->file = (t_file *)malloc(sizeof(t_file));

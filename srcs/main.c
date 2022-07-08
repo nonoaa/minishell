@@ -19,6 +19,7 @@ int main(int argc, char *argv[], char *envp[])
 	init(argc, argv, envp);
 	while(1)
 	{
+		echoctl_off();
 		line = readline("minishell:$ ");
 		if (line)
 		{
@@ -29,6 +30,7 @@ int main(int argc, char *argv[], char *envp[])
 			ft_clear();
 			free(line);
 			line = NULL;
+			set_org_term();
 		}
 		else
 			ctrl_d();
