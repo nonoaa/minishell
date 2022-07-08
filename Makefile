@@ -3,13 +3,13 @@ CC = gcc
 # CFLAGS = -fsanitize=thread -g
 # CFLAGS = -g
 CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -lncurses -lreadline -L/Users/byahn/.brew/opt/readline/lib
-CPPFLAGS = -I/Users/byahn/.brew/opt/readline/include
+# LDFLAGS = -lncurses -lreadline -L/Users/byahn/.brew/opt/readline/lib
+# CPPFLAGS = -I/Users/byahn/.brew/opt/readline/include
 # LDFLAGS = -lncurses -lreadline -L/usr/local/opt/readline/lib
 # CPPFLAGS = -I/usr/local/opt/readline/include
 
-# LDFLAGS = -lncurses -lreadline -L/Users/junylee/.brew/opt/readline/lib
-# CPPFLAGS = -I/Users/junylee/.brew/opt/readline/include
+LDFLAGS = -lncurses -lreadline -L/Users/junylee/.brew/opt/readline/lib
+CPPFLAGS = -I/Users/junylee/.brew/opt/readline/include
 
 INC = ./includes
 NAME = minishell
