@@ -12,7 +12,7 @@
 
 #include "../minishell.h"
 
-static char	*replace_env(char *data, int start, int end, int flag)
+static char	*replace_env(char *data, int start, int end)
 {
 	int		idx;
 	char	*env;
@@ -21,10 +21,8 @@ static char	*replace_env(char *data, int start, int end, int flag)
 	char	*str;
 
 	idx = 0;
-	if (end - start < 1 && flag == FALSE)
+	if (end - start < 1)
 		return (ft_strdup("$"));
-	else if (end - start < 1 && flag == TRUE)
-		return (ft_strdup(""));
 	str = ft_substr(data, start, end - start);
 	while (str[idx] && !ft_isblank(str[idx]))
 		idx++;
@@ -68,7 +66,6 @@ static void	replace_token(char **res, char *data)
 	int	dquote;
 	int	front;
 	int	end;
-	int	flag;
 
 	init_variable(&dquote, &front, &end);
 	while (data[++end])
@@ -83,8 +80,8 @@ static void	replace_token(char **res, char *data)
 		else if (data[end] == '$')
 		{
 			join_str(res, data, &front, end++);
-			find_end_pos(data, &end, &flag);
-			join_envp(res, replace_env(data, front, end, flag), &front, &end);
+			find_end_pos(data, &end);
+			join_envp(res, replace_env(data, front, end), &front, &end);
 		}
 		else if (!data[end + 1])
 			join_str(res, data, &front, end + 1);
