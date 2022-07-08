@@ -67,4 +67,7 @@ void	builtin_pwd(t_node *node);
 ** unset.c
 ** =============================================================================
 */
+
+void	builtin_unset(t_node *node);
+
 #endif
