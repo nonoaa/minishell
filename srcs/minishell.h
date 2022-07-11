@@ -15,6 +15,9 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <errno.h>
+# include <sys/ioctl.h>
+# include <termios.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <fcntl.h>

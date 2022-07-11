@@ -97,43 +97,123 @@ typedef struct s_info
 	t_list			*hdoc_list;
 }	t_info;
 
+/*
+** =============================================================================
+** tokenize.c
+** =============================================================================
+*/
+
 void	tokenize(t_tok_list **list, char *str);
-void	print_strerr(int err);
+
+/*
+** =============================================================================
+** list.c
+** =============================================================================
+*/
 t_tok_list	*create_list(void);
-void	init(int argc, char **argv, char **envp);
 void	add_token(t_tok_list **list, t_tok *new_tok);
-int	chk_input(char *line);
-void	print_syntax_err(char *line);
-void	ft_clear(void);
-void	pipeline(int *idx);
-t_astree	*create_tree(void);
-t_node	*create_node(t_tok	*token);
 t_tok	*get_token(t_tok_list *list, int pos);
 
+/*
+** =============================================================================
+** init.c
+** =============================================================================
+*/
+void	init(int argc, char **argv, char **envp);
+
+/*
+** =============================================================================
+** chk_input.c
+** =============================================================================
+*/
+int	chk_input(char *line);
+
+/*
+** =============================================================================
+** utils_print.c
+** =============================================================================
+*/
+void	print_strerr(int err);
+void	print_syntax_err(char *line);
+
+
+/*
+** =============================================================================
+** utils_clear.c
+** =============================================================================
+*/
+void	ft_clear(void);
+
+/*
+** =============================================================================
+** syntax.c
+** =============================================================================
+*/
 void	pipeline(int *idx);
 void	cmd(int *idx);
 void	simple_cmd(int *idx);
 void	redirs(int *idx);
 void	redir(int *idx);
+
+/*
+** =============================================================================
+** syntax2.c
+** =============================================================================
+*/
 void	args(int *idx);
 void	path(int *idx);
 void	filename(int *idx);
 
+
+/*
+** =============================================================================
+** tree.c
+** =============================================================================
+*/
+t_astree	*create_tree(void);
+t_node	*create_node(t_tok	*token);
+
+/*
+** =============================================================================
+** insert.c
+** =============================================================================
+*/
 void	insert_pipe_heredoc(t_astree *tree, t_node *node);
 void	insert_redir(t_astree *tree, t_node *node);
 void	insert_path(t_astree *tree, t_node *node);
 void	insert_filename(t_astree *tree, t_node *node);
 void	insert_heredoc_redir(void);
+
+/*
+** =============================================================================
+** env_list.c
+** =============================================================================
+*/
 t_enode *create_enode(char *str);
 void	set_env_list(char **envp);
 
+/*
+** =============================================================================
+** replace_env.c
+** =============================================================================
+*/
 void	replace_recur(t_node *node);
 
+/*
+** =============================================================================
+** utils_replace.c
+** =============================================================================
+*/
 void	join_str(char **new_data, char *org_data, int *start, int end);
 void	join_envp(char **new_data, char *env, int *start, int *end);
 void	find_end_pos(char *data, int *end);
 char	*get_env_or_status(char *env);
 
+/*
+** =============================================================================
+** utils_replace2.c
+** =============================================================================
+*/
 void	init_variable(int *dquote, int *front, int *end);
 void	join_squote(char **res, char *data, int *front, int *end);
 

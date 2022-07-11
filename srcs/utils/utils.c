@@ -40,7 +40,7 @@ int	ft_isblank(char c)
 void	ctrl_d(void)
 {
 	ft_putstr_fd("\033[1A", STDOUT);
-	ft_putstr_fd("\033[11C", STDOUT);
+	ft_putstr_fd("\033[12C", STDOUT);
 	ft_putendl_fd("exit", STDOUT);
 	set_org_term();
 	exit(get_info()->exitcode);
