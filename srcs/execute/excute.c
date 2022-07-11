@@ -14,7 +14,7 @@
 
 static void exe_command(t_node *node)
 {
-	// connect_redir();
+	connect_redir();
 	if (!ft_strcmp(node->data, "echo"))
 		builtin_echo(node);
 	else if (!ft_strcmp(node->data, "cd"))
@@ -31,7 +31,7 @@ static void exe_command(t_node *node)
 	// 	builtin_exit(node);
 	// else
 	// 	exec(node, 0);
-	// disconnect_redir();
+	disconnect_redir();
 }
 
 static void execute_node(t_node *node)
@@ -40,8 +40,13 @@ static void execute_node(t_node *node)
 		return ;
 	if (node->type == HEREDOC)
 		start_heredoc(node);
+	else if (node->type == PIPE)
+		execute_pipe(node);
+	else if (node->type == REDIR)
+		redirection(node);
 	else if (node->type == TOKEN)
 		exe_command(node);
+	// get_info()->is_hdoc = FALSE;
 }
 
 void execute_tree(t_node *node)

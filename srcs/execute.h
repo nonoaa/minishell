@@ -31,6 +31,7 @@ void execute_tree(t_node *node);
 
 int	connect_redir(void);
 int	disconnect_redir(void);
+void	redirection(t_node *node);
 
 /*
 ** =============================================================================
