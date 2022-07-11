@@ -44,13 +44,16 @@ void	join_envp(char **new_data, char *env, int *start, int *end)
 	*end -= 1;
 }
 
-void	find_end_pos(char *data, int *end)
+void	find_end_pos(char *data, int *end, int *flag)
 {
 	char	cur;
 	int		new_end;
 
 	new_end = *end;
 	cur = data[new_end];
+	*flag = TRUE;
+	if ((new_end - 2 >= 0) && data[new_end - 2])
+		*flag = FALSE;
 	while (cur && cur != '\'' && cur != '\"' && !ft_isblank(cur)
 		&& cur != '$' && cur != '=')
 	{

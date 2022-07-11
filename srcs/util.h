@@ -37,7 +37,7 @@ void	ft_clear(void);
 */
 void	join_str(char **new_data, char *org_data, int *start, int end);
 void	join_envp(char **new_data, char *env, int *start, int *end);
-void	find_end_pos(char *data, int *end);
+void	find_end_pos(char *data, int *end, int *flag);
 char	*get_env_or_status(char *env);
 
 /*
