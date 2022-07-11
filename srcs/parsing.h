@@ -1,9 +1,6 @@
 #ifndef PARSING_H
 # define PARSING_H
 
-# include <errno.h>
-# include <sys/ioctl.h>
-# include <termios.h>
 # include "minishell.h"
 
 # define TRUE 1
@@ -130,22 +127,6 @@ int	chk_input(char *line);
 
 /*
 ** =============================================================================
-** utils_print.c
-** =============================================================================
-*/
-void	print_strerr(int err);
-void	print_syntax_err(char *line);
-
-
-/*
-** =============================================================================
-** utils_clear.c
-** =============================================================================
-*/
-void	ft_clear(void);
-
-/*
-** =============================================================================
 ** syntax.c
 ** =============================================================================
 */
@@ -198,33 +179,5 @@ void	set_env_list(char **envp);
 ** =============================================================================
 */
 void	replace_recur(t_node *node);
-
-/*
-** =============================================================================
-** utils_replace.c
-** =============================================================================
-*/
-void	join_str(char **new_data, char *org_data, int *start, int end);
-void	join_envp(char **new_data, char *env, int *start, int *end);
-void	find_end_pos(char *data, int *end);
-char	*get_env_or_status(char *env);
-
-/*
-** =============================================================================
-** utils_replace2.c
-** =============================================================================
-*/
-void	init_variable(int *dquote, int *front, int *end);
-void	join_squote(char **res, char *data, int *front, int *end);
-
-/*
-** =============================================================================
-** utils_termios.c
-** =============================================================================
-*/
-void		get_org_term(void);
-void		set_org_term(void);
-void		echoctl_off(void);
-void		echoctl_on(void);
 
 #endif
