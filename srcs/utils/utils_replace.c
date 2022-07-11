@@ -52,7 +52,7 @@ void	find_end_pos(char *data, int *end, int *flag)
 	new_end = *end;
 	cur = data[new_end];
 	*flag = TRUE;
-	if ((new_end - 2 >= 0) && data[new_end - 2])
+	if ((new_end - 2 >= 0) && data[new_end - 2] && (!cur || cur == '$'))
 		*flag = FALSE;
 	while (cur && cur != '\'' && cur != '\"' && !ft_isblank(cur)
 		&& cur != '$' && cur != '=')
