@@ -34,6 +34,13 @@ typedef enum e_type
 
 typedef char	*t_data;
 
+typedef struct s_heredoc
+{
+	int					fd;
+	char				*h_name;
+	char				*eof;
+}	t_heredoc;
+
 typedef struct s_file
 {
 	int	open_stdin;
@@ -78,13 +85,16 @@ typedef struct s_info
 {
 	t_tok_list		*list;
 	t_astree		*tree;
-	t_file			*file;
 	t_list			*env_list;
+	t_file			*file;
 	int				exitcode;
-	int				h_count;
-	int				is_hdoc;
 	struct termios	org_term;
 	struct termios	new_term;
+	int				is_hdoc;
+	int				h_count;
+	int				h_idx;
+	int				is_pipe;
+	t_list			*hdoc_list;
 }	t_info;
 
 void	tokenize(t_tok_list **list, char *str);

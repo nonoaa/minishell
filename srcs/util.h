@@ -12,6 +12,7 @@ t_info	*get_info(void);
 int	ft_isblank(char c);
 void	ctrl_d(void);
 char	*get_env(char *key);
+int	ft_strcmp(char *s1, char *s2);
 
 /*
 ** =============================================================================

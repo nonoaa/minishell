@@ -32,4 +32,15 @@ void execute_tree(t_node *node);
 int	connect_redir(void);
 int	disconnect_redir(void);
 
+/*
+** =============================================================================
+** heredoc.c
+** =============================================================================
+*/
+
+void	start_heredoc(t_node *node);
+void	heredoc(t_list	*hdoc);
+t_heredoc	*new_heredoc(t_node *node);
+void	clear_heredoc(void *content);
+
 #endif

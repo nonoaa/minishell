@@ -17,18 +17,12 @@
 # include <stdlib.h>
 # include <readline/readline.h>
 # include <readline/history.h>
+# include <fcntl.h>
 # include "../libft/libft.h"
 
 # include "parsing.h"
 # include "builtin.h"
 # include "execute.h"
 # include "util.h"
-/*
-** =============================================================================
-** utils.c
-** =============================================================================
-*/
-
-int	ft_strcmp(char *s1, char *s2);
 
 #endif

@@ -43,6 +43,7 @@ SOURCES = main.c \
 		$(SRC_PARSE)replace_env.c \
 		$(SRC_EXCUTE)excute.c \
 		$(SRC_EXCUTE)redir.c \
+		$(SRC_EXCUTE)heredoc.c \
 		$(SRC_BULITIN)cd.c \
 		$(SRC_BULITIN)echo.c \
 		$(SRC_BULITIN)env.c \

@@ -38,7 +38,9 @@ static void execute_node(t_node *node)
 {
 	if (!node)
 		return ;
-	if (node->type == TOKEN)
+	if (node->type == HEREDOC)
+		start_heredoc(node);
+	else if (node->type == TOKEN)
 		exe_command(node);
 }
 
