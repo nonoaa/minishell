@@ -67,7 +67,8 @@ void	exec_signal(int status)
 		{	
 			if (get_info()->has_pipe == FALSE)
 				ft_putchar_fd('\n', STDIN);
-			ft_putstr_fd("\033[12D", STDIN);
+			else
+				ft_putstr_fd("\033[12D", STDIN);
 			get_info()->exitcode = 130;
 		}
 	}
