@@ -103,6 +103,7 @@ typedef struct s_info
 	int				h_count;
 	int				h_idx;
 	int				is_pipe;
+	int				has_pipe;
 	t_list			*hdoc_list;
 }	t_info;
 

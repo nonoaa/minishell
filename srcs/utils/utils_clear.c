@@ -60,4 +60,5 @@ void	ft_clear(void)
 	clear_list(info->list);
 	clear_tree(info->tree);
 	info->h_count = 0;
+	info->has_pipe = FALSE;
 }
