@@ -65,7 +65,7 @@ void		echoctl_on(void);
 */
 
 void	free_enode(void *node);
-
+void	free_split(char **split);
 /*
 ** =============================================================================
 ** utils_env.c

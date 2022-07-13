@@ -24,3 +24,17 @@ void	free_enode(void *node)
 	free(del);
 	del = 0;
 }
+
+void	free_split(char **split)
+{
+	int	idx;
+
+	idx = -1;
+	while (split[++idx])
+	{
+		free(split[idx]);
+		split[idx] = 0;
+	}
+	free(split);
+	split = 0;
+}

@@ -80,7 +80,7 @@ void	add_env(t_info *info, char *data, int *arg_check)
 		ft_lstadd_back(&(info->env_list), ft_lstnew(new_value));
 	else
 	{
-		free(env_lst);
+		free_enode(env_lst->content);
 		env_lst->content = new_value;
 	}
 }

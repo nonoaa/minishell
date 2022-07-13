@@ -32,11 +32,9 @@ int	connect_redir(void)
 
 int	disconnect_redir(void)
 {
-	int		status;
 	t_info	*info;
 
 	info = get_info();
-	status = 0;
 	if (info->file->open_stdin > 0)
 	{
 		close(info->file->open_stdin);
@@ -50,4 +48,47 @@ int	disconnect_redir(void)
 			return (FALSE);
 	}
 	return (TRUE);
+}
+
+static	void init_redir(int is_stdin)
+{
+	if (is_stdin == FALSE && get_info()->file->open_stdout > 0)
+	{
+		close(get_info()->file->open_stdout);
+		get_info()->file->open_stdout = 0;
+	}
+	if (is_stdin == TRUE && get_info()->file->open_stdin < 0)
+	{
+		close(get_info()->file->open_stdin);
+		get_info()->file->open_stdin = 0;
+	}
+}
+
+void	redirection(t_node *node)
+{
+	t_file	**file;
+	int		is_stdin;
+	char	*path;
+
+	file = &(get_info()->file);
+	path = node->right->data;
+	is_stdin = TRUE;
+	if (node->data[0] == '>')
+		is_stdin = FALSE;
+	init_redir(is_stdin);
+	if (!ft_strcmp(">", node->data))
+		(*file)->open_stdout = open(path, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	else if (!ft_strcmp(">>", node->data))
+		(*file)->open_stdout = open(path, O_WRONLY | O_CREAT | O_APPEND, 0644);
+	else if (!ft_strcmp("<", node->data))
+		(*file)->open_stdin = open(path, O_RDONLY, 0644);
+	if ((*file)->open_stdout < 0 || (*file)->open_stdin < 0)
+	{
+		ft_putstr_fd("minishell: ", STDERR);
+		ft_putstr_fd(path, STDERR);
+		ft_putstr_fd(": ", STDERR);
+		ft_putendl_fd(strerror(errno), STDERR);
+		return ;
+	}
+	execute_tree(node->left);
 }
