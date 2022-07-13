@@ -12,13 +12,35 @@
 
 #include "minishell.h"
 
+static void	print_art(void)
+{
+	printf(
+		"                                           "
+		"  __                  ___       ___      \n"
+		"              __              __           "
+		" /\\ \\                /\\_ \\     /\\_ \\     \n"
+		"  ___ ___    /\\_\\     ___    /\\_\\     __"
+		"__  \\ \\ \\___       __   \\//\\ \\    \\//\\ \\    \n"
+		"/' __` __`\\  \\/\\ \\  /' _ `\\  \\/\\ \\   "
+		"/',__\\  \\ \\  _ `\\   /'__`\\   \\ \\ \\   "
+		"  \\ \\ \\   \n"
+		"/\\ \\/\\ \\/\\ \\  \\ \\ \\ /\\ \\/\\ \\  \\"
+		" \\ \\ /\\__, `\\  \\ \\ \\ \\ \\ /\\  __/    \\_\\ \\_    \\_\\ \\_ \n"
+		"\\ \\_\\ \\_\\ \\_\\  \\ \\_\\\\ \\_\\ \\_\\ "
+		" \\ \\_\\\\/\\____/   \\ \\_\\ \\_\\\\ \\____\\   /\\____\\   /\\____\\\n"
+		" \\/_/\\/_/\\/_/   \\/_/ \\/_/\\/_/   \\/_/ \\"
+		"/___/     \\/_/\\/_/ \\/____/   \\/____/   \\/____/\n"
+		"                                             "
+		"              made by    byahn & junylee\n");
+}
+
 void	handler(int signo)
 {
 	if (signo == SIGINT)
 	{
 		get_info()->exitcode = 1;
 		get_info()->is_hdoc = FALSE;
-		ioctl(STDIN_FILENO, TIOCSTI, "\n");
+		ioctl(STDIN_FILENO, TIOCSTI, "\\n");
 		rl_replace_line("", 0);
 		rl_on_new_line();
 	}
@@ -30,7 +52,7 @@ void	init(int argc, char **argv, char **envp)
 
 	(void)argc;
 	(void)argv;
-	(void)envp;
+	print_art();
 	info = get_info();
 	ft_bzero(info, sizeof(t_info));
 	signal(SIGINT, handler);
