@@ -32,7 +32,7 @@ t_list	*ft_lstdup(t_list *lst)
 	if (!ret)
 		print_strerr(errno);
 	lst = lst->next;
-	while(lst)
+	while (lst)
 	{
 		ft_lstadd_back(&ret, ft_lstnew(ft_enode_dup(lst->content)));
 		lst = lst->next;

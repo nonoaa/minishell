@@ -55,7 +55,7 @@ char	*get_env(char *key)
 	cur = info->env_list;
 	while (cur)
 	{
-		if (!ft_strcmp(((t_enode *)cur->content)->key , key))
+		if (!ft_strcmp(((t_enode *)cur->content)->key, key))
 			return (((t_enode *)cur->content)->value);
 		cur = cur->next;
 	}

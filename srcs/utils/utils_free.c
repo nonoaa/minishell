@@ -14,7 +14,7 @@
 
 void	free_enode(void *node)
 {
-	t_enode *del;
+	t_enode	*del;
 
 	del = (t_enode *)node;
 	free(del->key);
