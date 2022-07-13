@@ -37,7 +37,7 @@ t_heredoc	*new_heredoc(t_node *node)
 	if (!ret)
 		print_strerr(errno);
 	ft_bzero(ret, sizeof(t_heredoc));
-	ret->h_name = ft_strjoin(".heredoc", ft_itoa(get_info()->h_idx++));
+	ret->h_name = ft_strjoin(".heredoc_", ft_itoa(get_info()->h_idx++));
 	flag = O_CREAT | O_TRUNC | O_RDWR;
 	ret->fd = open(ret->h_name, flag, 0644);
 	if (ret->fd < 0)
@@ -62,7 +62,7 @@ void	heredoc(t_list	*hdoc)
 		input = readline("> ");
 		if (!input)
 		{
-			ft_putstr_fd("\x1b[1A", STDOUT);
+			ft_putstr_fd("\033[1A", STDOUT);
 			ft_putstr_fd("\033[2C", STDOUT);
 			break ;
 		}

@@ -120,7 +120,7 @@ t_tok	*get_token(t_tok_list *list, int pos);
 ** =============================================================================
 */
 void	init(int argc, char **argv, char **envp);
-
+void	handler(int signo);
 /*
 ** =============================================================================
 ** chk_input.c

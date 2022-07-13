@@ -45,6 +45,8 @@ SOURCES = main.c \
 		$(SRC_EXCUTE)redir.c \
 		$(SRC_EXCUTE)heredoc.c \
 		$(SRC_EXCUTE)pipe.c \
+		$(SRC_EXCUTE)execve.c \
+		$(SRC_EXCUTE)execve2.c \
 		$(SRC_BULITIN)cd.c \
 		$(SRC_BULITIN)echo.c \
 		$(SRC_BULITIN)env.c \

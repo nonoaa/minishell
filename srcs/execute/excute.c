@@ -27,10 +27,10 @@ static void exe_command(t_node *node)
 		builtin_unset(node);
 	else if (!ft_strcmp(node->data, "env"))
 		builtin_env(node);
-	// else if (!ft_strcmp(node->data, "exit"))
-	// 	builtin_exit(node);
-	// else
-	// 	exec(node, 0);
+	else if (!ft_strcmp(node->data, "exit"))
+		builtin_exit(node);
+	else
+		exec(node, 0);
 	disconnect_redir();
 }
 
@@ -46,7 +46,7 @@ static void execute_node(t_node *node)
 		redirection(node);
 	else if (node->type == TOKEN)
 		exe_command(node);
-	// get_info()->is_hdoc = FALSE;
+	get_info()->is_hdoc = FALSE;
 }
 
 void execute_tree(t_node *node)
