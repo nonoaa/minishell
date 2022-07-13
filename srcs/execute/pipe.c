@@ -58,9 +58,9 @@ void	execute_pipe(t_node *node)
 	if (pipe(pipe_fd) == -1)
 		print_strerr(errno);
 	node_left = pipe_input(pipe_fd, node->left);
+	node_right = pipe_output(pipe_fd, node->right);
 	waitpid(node_left, &(get_info()->exitcode), 0);
 	close(pipe_fd[1]);
-	node_right = pipe_output(pipe_fd, node->right);
 	waitpid(node_right, &(get_info()->exitcode), 0);
 	close(pipe_fd[0]);
 	if (get_info()->exitcode > 0)
