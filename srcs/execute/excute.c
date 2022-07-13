@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-static void exe_command(t_node *node)
+static void	exe_command(t_node *node)
 {
 	connect_redir();
 	if (!ft_strcmp(node->data, "echo"))
@@ -34,7 +34,7 @@ static void exe_command(t_node *node)
 	disconnect_redir();
 }
 
-static void execute_node(t_node *node)
+static void	execute_node(t_node *node)
 {
 	if (!node)
 		return ;
@@ -49,7 +49,7 @@ static void execute_node(t_node *node)
 	get_info()->is_hdoc = FALSE;
 }
 
-void execute_tree(t_node *node)
+void	execute_tree(t_node *node)
 {
 	t_info	*info;
 

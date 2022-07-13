@@ -21,7 +21,7 @@
 ** =============================================================================
 */
 
-void execute_tree(t_node *node);
+void		execute_tree(t_node *node);
 
 /*
 ** =============================================================================
@@ -29,7 +29,7 @@ void execute_tree(t_node *node);
 ** =============================================================================
 */
 
-void	exec(t_node *node, int status);
+void		exec(t_node *node, int status);
 
 /*
 ** =============================================================================
@@ -37,8 +37,8 @@ void	exec(t_node *node, int status);
 ** =============================================================================
 */
 
-char	**get_cmd_opt(t_node *node);
-void	exec_signal(int status);
+char		**get_cmd_opt(t_node *node);
+void		exec_signal(int status);
 
 /*
 ** =============================================================================
@@ -46,7 +46,7 @@ void	exec_signal(int status);
 ** =============================================================================
 */
 
-void	execute_pipe(t_node *node);
+void		execute_pipe(t_node *node);
 
 /*
 ** =============================================================================
@@ -54,9 +54,9 @@ void	execute_pipe(t_node *node);
 ** =============================================================================
 */
 
-int	connect_redir(void);
-int	disconnect_redir(void);
-void	redirection(t_node *node);
+int			connect_redir(void);
+int			disconnect_redir(void);
+void		redirection(t_node *node);
 
 /*
 ** =============================================================================
@@ -64,9 +64,9 @@ void	redirection(t_node *node);
 ** =============================================================================
 */
 
-void	start_heredoc(t_node *node);
-void	heredoc(t_list	*hdoc);
+void		start_heredoc(t_node *node);
+void		heredoc(t_list *hdoc);
 t_heredoc	*new_heredoc(t_node *node);
-void	clear_heredoc(void *content);
+void		clear_heredoc(void *content);
 
 #endif

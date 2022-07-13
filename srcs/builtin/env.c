@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-static void arg_chk(char *data)
+static void	arg_chk(char *data)
 {
 	if (data[0] == '-' && data[1])
 	{
@@ -37,7 +37,7 @@ static void arg_chk(char *data)
 
 void	builtin_env(t_node *node)
 {
-	t_list *env_lst;
+	t_list	*env_lst;
 
 	if (node->left)
 	{
@@ -45,7 +45,7 @@ void	builtin_env(t_node *node)
 		return ;
 	}
 	env_lst = get_info()->env_list;
-	while(env_lst)
+	while (env_lst)
 	{
 		ft_putstr_fd(((t_enode *)env_lst->content)->key, STDOUT);
 		ft_putchar_fd('=', STDOUT);

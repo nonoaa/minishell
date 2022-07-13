@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minishell.h" 
+#include "minishell.h" 
 
 int	connect_redir(void)
 {
@@ -50,7 +50,7 @@ int	disconnect_redir(void)
 	return (TRUE);
 }
 
-static	void init_redir(int is_stdin)
+static void	init_redir(int is_stdin)
 {
 	if (is_stdin == FALSE && get_info()->file->open_stdout > 0)
 	{

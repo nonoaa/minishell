@@ -53,7 +53,7 @@ void	execute_pipe(t_node *node)
 {
 	int	pipe_fd[2];
 	int	node_left;
-	int node_right;
+	int	node_right;
 
 	if (pipe(pipe_fd) == -1)
 		print_strerr(errno);

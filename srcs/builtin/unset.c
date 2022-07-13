@@ -37,7 +37,6 @@ static	int	target_chk(char *data)
 	return (TRUE);
 }
 
-
 static void	ft_unset(t_info *info, char *target)
 {
 	t_list	*pre;
@@ -63,12 +62,12 @@ static void	ft_unset(t_info *info, char *target)
 		info->env_list = cur->next;
 	else
 		pre->next = cur->next;
-	ft_lstdelone(cur, free_enode);	
+	ft_lstdelone(cur, free_enode);
 }
 
 void	builtin_unset(t_node *node)
 {
-	t_node *arg;
+	t_node	*arg;
 
 	arg = node->left;
 	get_info()->exitcode = 0;

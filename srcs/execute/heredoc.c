@@ -53,11 +53,11 @@ t_heredoc	*new_heredoc(t_node *node)
 
 void	heredoc(t_list	*hdoc)
 {
-	char	*input;
+	char		*input;
 	t_heredoc	*content;
 
 	content = (t_heredoc *)hdoc->content;
-	while(get_info()->is_hdoc == TRUE)
+	while (get_info()->is_hdoc == TRUE)
 	{
 		input = readline("> ");
 		if (!input)

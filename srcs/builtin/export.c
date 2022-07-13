@@ -20,7 +20,7 @@ void	export_no_args(void)
 	lst = ft_lstdup(get_info()->env_list);
 	head = lst;
 	env_sort(&lst);
-	while(lst)
+	while (lst)
 	{
 		ft_putstr_fd("declare -x ", STDOUT);
 		ft_putstr_fd(((t_enode *)lst->content)->key, STDOUT);
@@ -40,7 +40,7 @@ void	export_error(char *data)
 	get_info()->exitcode = 1;
 }
 
-int		data_chk(char *data)
+int	data_chk(char *data)
 {
 	int	i;
 
@@ -74,7 +74,8 @@ void	add_env(t_info *info, char *data, int *arg_check)
 		return ;
 	new_value = create_enode(data);
 	env_lst = info->env_list;
-	while (env_lst && ft_strcmp(new_value->key, ((t_enode *)env_lst->content)->key))
+	while (env_lst && ft_strcmp(new_value->key,
+			((t_enode *)env_lst->content)->key))
 		env_lst = env_lst->next;
 	if (!env_lst)
 		ft_lstadd_back(&(info->env_list), ft_lstnew(new_value));
@@ -87,8 +88,8 @@ void	add_env(t_info *info, char *data, int *arg_check)
 
 void	builtin_export(t_node *node)
 {
-	int	arg_check;
-	t_node *arg;
+	int		arg_check;
+	t_node	*arg;
 
 	arg_check = 0;
 	arg = node->left;

@@ -30,12 +30,12 @@ static void	no_arg(char *home)
 	}
 }
 
-void builtin_cd(t_node *node)
+void	builtin_cd(t_node *node)
 {
-    char *home;
+	char	*home;
 
-    home = get_env("HOME");
-    if (!node->left)
+	home = get_env("HOME");
+	if (!node->left)
 		no_arg(home);
 	else if (chdir(node->left->data) < 0)
 	{
@@ -57,5 +57,4 @@ void builtin_cd(t_node *node)
 		}
 		get_info()->exitcode = 1;
 	}
-
 }
