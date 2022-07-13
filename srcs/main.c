@@ -20,6 +20,7 @@ int main(int argc, char *argv[], char *envp[])
 	while(1)
 	{
 		echoctl_off();
+		update_shlvl();
 		line = readline("minishell:$ ");
 		if (line)
 		{

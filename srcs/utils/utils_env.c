@@ -73,3 +73,25 @@ void	env_sort(t_list **lst)
 		l1 = &(*l1)->next;
 	}
 }
+
+void	update_shlvl(void)
+{
+	t_node	cmd_node;
+	t_node	new_node;
+	char	*new_lvl;
+	int		org_exitcode;
+
+	ft_bzero(&cmd_node, sizeof(t_node));
+	ft_bzero(&new_node, sizeof(t_node));
+	cmd_node.data = "export";
+	cmd_node.type = TOKEN;
+	new_lvl = ft_itoa(ft_atoi(getenv("SHLVL")) + 1);
+	new_node.data = ft_strjoin("SHLVL=", new_lvl);
+	new_node.type = TOKEN;
+	cmd_node.left = &new_node;
+	org_exitcode = get_info()->exitcode;
+	builtin_export(&cmd_node);
+	get_info()->exitcode = org_exitcode;
+	free(new_lvl);
+	free(new_node.data);
+}

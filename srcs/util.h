@@ -75,5 +75,6 @@ void	free_split(char **split);
 t_enode	*ft_enode_dup(t_enode *enode);
 t_list	*ft_lstdup(t_list *list);
 void	env_sort(t_list **lst);
+void	update_shlvl(void);
 
 #endif
