@@ -40,7 +40,7 @@ void	handler(int signo)
 	{
 		get_info()->exitcode = 1;
 		get_info()->is_hdoc = FALSE;
-		ioctl(STDIN_FILENO, TIOCSTI, "\\n");
+		ioctl(STDIN_FILENO, TIOCSTI, "\n");
 		rl_replace_line("", 0);
 		rl_on_new_line();
 	}
