@@ -21,10 +21,10 @@
 ** =============================================================================
 */
 t_info	*get_info(void);
-int	ft_isblank(char c);
+int		ft_isblank(char c);
 void	ctrl_d(void);
 char	*get_env(char *key);
-int	ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 
 /*
 ** =============================================================================
@@ -33,7 +33,6 @@ int	ft_strcmp(char *s1, char *s2);
 */
 void	print_strerr(int err);
 void	print_syntax_err(char *line);
-
 
 /*
 ** =============================================================================
@@ -65,10 +64,10 @@ void	join_squote(char **res, char *data, int *front, int *end);
 ** utils_termios.c
 ** =============================================================================
 */
-void		get_org_term(void);
-void		set_org_term(void);
-void		echoctl_off(void);
-void		echoctl_on(void);
+void	get_org_term(void);
+void	set_org_term(void);
+void	echoctl_off(void);
+void	echoctl_on(void);
 
 /*
 ** =============================================================================

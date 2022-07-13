@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byahn <byahn@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/13 21:40:28 by byahn             #+#    #+#             */
+/*   Updated: 2022/07/13 21:40:29 by byahn            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PARSING_H
 # define PARSING_H
 
@@ -100,7 +112,7 @@ typedef struct s_info
 ** =============================================================================
 */
 
-void	tokenize(t_tok_list **list, char *str);
+void		tokenize(t_tok_list **list, char *str);
 
 /*
 ** =============================================================================
@@ -108,43 +120,42 @@ void	tokenize(t_tok_list **list, char *str);
 ** =============================================================================
 */
 t_tok_list	*create_list(void);
-void	add_token(t_tok_list **list, t_tok *new_tok);
-t_tok	*get_token(t_tok_list *list, int pos);
+void		add_token(t_tok_list **list, t_tok *new_tok);
+t_tok		*get_token(t_tok_list *list, int pos);
 
 /*
 ** =============================================================================
 ** init.c
 ** =============================================================================
 */
-void	init(int argc, char **argv, char **envp);
-void	handler(int signo);
+void		init(int argc, char **argv, char **envp);
+void		handler(int signo);
 /*
 ** =============================================================================
 ** chk_input.c
 ** =============================================================================
 */
-int	chk_input(char *line);
+int			chk_input(char *line);
 
 /*
 ** =============================================================================
 ** syntax.c
 ** =============================================================================
 */
-void	pipeline(int *idx);
-void	cmd(int *idx);
-void	simple_cmd(int *idx);
-void	redirs(int *idx);
-void	redir(int *idx);
+void		pipeline(int *idx);
+void		cmd(int *idx);
+void		simple_cmd(int *idx);
+void		redirs(int *idx);
+void		redir(int *idx);
 
 /*
 ** =============================================================================
 ** syntax2.c
 ** =============================================================================
 */
-void	args(int *idx);
-void	path(int *idx);
-void	filename(int *idx);
-
+void		args(int *idx);
+void		path(int *idx);
+void		filename(int *idx);
 
 /*
 ** =============================================================================
@@ -152,32 +163,32 @@ void	filename(int *idx);
 ** =============================================================================
 */
 t_astree	*create_tree(void);
-t_node	*create_node(t_tok	*token);
+t_node		*create_node(t_tok	*token);
 
 /*
 ** =============================================================================
 ** insert.c
 ** =============================================================================
 */
-void	insert_pipe_heredoc(t_astree *tree, t_node *node);
-void	insert_redir(t_astree *tree, t_node *node);
-void	insert_path(t_astree *tree, t_node *node);
-void	insert_filename(t_astree *tree, t_node *node);
-void	insert_heredoc_redir(void);
+void		insert_pipe_heredoc(t_astree *tree, t_node *node);
+void		insert_redir(t_astree *tree, t_node *node);
+void		insert_path(t_astree *tree, t_node *node);
+void		insert_filename(t_astree *tree, t_node *node);
+void		insert_heredoc_redir(void);
 
 /*
 ** =============================================================================
 ** env_list.c
 ** =============================================================================
 */
-t_enode *create_enode(char *str);
-void	set_env_list(char **envp);
+t_enode		*create_enode(char *str);
+void		set_env_list(char **envp);
 
 /*
 ** =============================================================================
 ** replace_env.c
 ** =============================================================================
 */
-void	replace_recur(t_node *node);
+void		replace_recur(t_node *node);
 
 #endif
