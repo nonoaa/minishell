@@ -60,5 +60,9 @@ void	ft_clear(void)
 	clear_list(info->list);
 	clear_tree(info->tree);
 	info->h_count = 0;
+	ft_lstclear(&info->hdoc_list, clear_heredoc);
+	ft_bzero(info->file, sizeof(t_file));
+	info->h_idx = 0;
+	info->is_hdoc = 0;
 	info->has_pipe = FALSE;
 }
