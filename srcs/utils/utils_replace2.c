@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_replace2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byahn <byahn@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 16:28:09 by byahn             #+#    #+#             */
-/*   Updated: 2022/06/24 20:33:33 by junylee          ###   ########.fr       */
+/*   Created: 2022/07/07 17:35:13 by byahn             #+#    #+#             */
+/*   Updated: 2022/07/07 17:35:14 by byahn            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int main(int argc, char *argv[], char *envp[])
+void	init_variable(int *dquote, int *front, int *end)
 {
-	char	*line;
+	*dquote = FALSE;
+	*end = -1;
+	*front = 0;
+}
 
-	init(argc, argv, envp);
-	while(1)
-	{
-		line = readline("minishell:$ ");
-		if (line)
-		{
-			if (line[0] == '\0' || chk_input(line) == TRUE)
-				continue ;
-
-			ft_clear();
-			free(line);
-			line = NULL;
-		}
-	}
-	return (0);
+void	join_squote(char **res, char *data, int *front, int *end)
+{
+	join_str(res, data, front, *end);
+	*end = ft_strlen(data) - ft_strlen(ft_strchr(data + *front, SQUOTE));
+	join_str(res, data, front, *end);
 }
