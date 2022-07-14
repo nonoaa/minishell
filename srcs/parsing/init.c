@@ -39,10 +39,26 @@ void	handler(int signo)
 	if (signo == SIGINT)
 	{
 		get_info()->exitcode = 1;
+		if (get_info()->is_hdoc == TRUE)
+		{
+			ioctl(STDIN_FILENO, TIOCSTI, "\n");
+			rl_replace_line("", 0);
+			rl_on_new_line();
+		}
+		else if (get_info()->is_run == FALSE)
+		{
+			printf("\n");
+			rl_on_new_line();
+			rl_replace_line("", 0);
+			rl_redisplay();
+		}
+		else
+		{
+			printf("\n");
+			rl_on_new_line();
+			rl_replace_line("", 0);
+		}
 		get_info()->is_hdoc = FALSE;
-		ioctl(STDIN_FILENO, TIOCSTI, "\n");
-		rl_replace_line("", 0);
-		rl_on_new_line();
 	}
 }
 

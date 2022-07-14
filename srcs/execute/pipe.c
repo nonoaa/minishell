@@ -55,6 +55,8 @@ void	execute_pipe(t_node *node)
 	int	node_left;
 	int	node_right;
 
+	get_info()->has_pipe = TRUE;
+	get_info()->is_run = TRUE;
 	if (pipe(pipe_fd) == -1)
 		print_strerr(errno);
 	node_left = pipe_input(pipe_fd, node->left);
