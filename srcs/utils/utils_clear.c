@@ -65,4 +65,5 @@ void	ft_clear(void)
 	info->h_idx = 0;
 	info->is_hdoc = 0;
 	info->has_pipe = FALSE;
+	info->is_run = FALSE;
 }
