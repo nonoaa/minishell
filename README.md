@@ -25,8 +25,8 @@ exit
   
 다음 기능을 일반 bash와 동일하게 동작해야하도록 구현한다.  
   
-multiline commands를 제외한 ' , "  
-file descriptor aggregation를 제외한 리다이렉션(<, >, >>)  
+single quotes(')와 double quotes(")  
+리다이렉션(<, >, >>, <<)  
 파이프(|)  
 환경변수($ followed by characters)  
 $?  
