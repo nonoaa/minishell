@@ -7,7 +7,6 @@
 
 ## 과제설명
 You must program a mini UNIX command interpreter.
-
 이 인터프리터는 명령 프롬프트(예를 들면 $> )를 띄워야하고, 사용자가 enter 키를 눌러 명령줄(command line)을 입력할 때 까지 기다려야 한다.
 
 프롬프트는 명령이 완전히 실행된 후에만 다시 표시된다.
